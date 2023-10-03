@@ -1,0 +1,12 @@
+[
+  {
+    "outputFileName": "wwwroot/js/AnalyzerLogCreator.min.js",
+    "inputFiles": [
+      "js/AnalyzerLogCreator.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+]

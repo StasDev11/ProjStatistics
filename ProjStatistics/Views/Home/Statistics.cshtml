@@ -1,0 +1,28 @@
+﻿@using ProjStatistics.Controllers
+@model ProjStatistics.Models.ViewModels.StatisticsViewModel
+@{
+    Layout = "_Layout";
+    ViewBag.Title = $"Common statistics of the source code ({Model.TargetDirectory})";
+}
+<h4 class="text-center mt-3">@ViewBag.Title</h4>
+
+<div class="my-3">
+    <div class="progress">
+        <div class="progress-bar progress-bar-success active" role="progressbar"
+             aria-valuemin="0" aria-valuemax="100" id="loadingStatus">
+        </div>
+    </div>
+
+    <h5 id="message" class="text-danger text-center"></h5>
+
+    <div class="text-center mt-3">
+        <form asp-action="@nameof(HomeController.DetailedStatistics)" asp-controller="Home" id="detailedReportForm">
+            <button type="submit" class="btn btn-sm btn-success shadow" id="btnGetDetailedReport">
+                Detailed statistics
+            </button>
+        </form>
+    </div>
+</div>
+
+<div id="analyzerLog"></div>
+<script src="~/js/AnalyzerLogCreator.min.js"></script>
